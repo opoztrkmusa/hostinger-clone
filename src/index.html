@@ -1,0 +1,1987 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .page-wrapper {
+      max-width: 1800px; /* Maksimum genişlik belirleyebilirsiniz */
+      margin: 0 auto; /* Sayfayı ortalamak için otomatik kenar boşluğu */
+      padding: 20px; /* İçeriğin kenarlardan uzaklığı */
+      background-color: transparent; /* Opsiyonel: Sayfa arkaplan rengi */
+    }
+        .nav img {
+            width: 50px;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+            transition: all 0.3s ease;
+        }
+
+        .ul img {
+            width: 25px;
+            height: 30px;
+        }
+
+        .hostinger img {
+            width: 20px;
+            height: 17px;
+            margin-top: 2px;
+        }
+
+        .span-star-section {
+            font-weight: bold;
+            font-size: medium;
+            color: black;
+        }
+
+        .sss div {
+            background: white;
+        }
+
+        .sss div i {
+            color: #00b67a;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="flex text-lg justify-between py-6 px-6 items-center">
+        <div class="flex gap-x-12">
+            <img src="https://www.hostinger.com.tr/h-assets/svg/icons/logos/hostinger-logo.svg#svgView(viewBox(0%200%20147%2030))"
+                class="w-36 cursor-pointer" alt="">
+
+            <div class="lg:flex hidden items-center gap-x-2 text-xl ">
+                <a href="#" class="flex items-center text-[15px] gap-x-2 font-semibold">
+
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAgVBMVEXjChf////jChjhAAD+9vfwl5n65OTtg4fiAAnjABHjBRT97/DiAATiAA374uP++vrvj5H40NHzsrPsfoDwnZ/zrbDpVFr52drrc3XqXmP1w8TqbG/sd3rxoqTnWFn3y8zkKi3mPEHlLzTmQkjkFCD2u73kICfoY2PoTFLkODjlSkoXI2ZzAAAGO0lEQVR4nO2dW3uiMBCGgSiHAMpBBFEULXj6/z9wwbptCVpNCDj1me9iL7bik3dnMjPJDFtFfSMpr16ATCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVNUwtv4Gsj9hRh55A3mjT5gx0f68yPgLRvnz+gGjvXotXaUhDFAhDFQhDFQhDFRhBQBVb+tmCANJCANVCANVmDSh6m3dDGEgCWGgCmGgSiLM5er68qecpQmsQE4FUAFY340FkyqvIZJgGU1xKwJ6TAxvPPaM8LCriejwON3dTKOEFMtsE09se1TJtvXYL72PykCS1/p4KR1hNIWQRTCxp0xjcWTH44KYw1qnI0xllVBnQf5rWirDWqcTTIWyHP3a+S1z4vax7NvqAmMqc/9RH3vq7R3ay8pvSByGkt3sjlmqIFDp+kN/oQxlHGEYas43tyyh+5ugCs+rMPSC1Nerv9K9YqCdIwpD3WXcRtHT2XL3oy2/W2aprU6jvTNIWBOtAMhKb6FMsmVeZ5evtrxiVjxJZKulMgyNkGU0srJbLOO1VYWu5pfUPMUhUv1BUo6Qm2lk0dr6/sEl1s1PWxWO7pMBYpoIjEZ2LZbsdAellkX2ZTrACUMExiUTNoYZD3KjaRqz/mkEYChJGRY7eehE1Fkcew/QAjAkZJzMDp8IhJTuim5LfSxuGM3ZMglm5D21uen3AYf2FAy4YaiZMVVyRFy+3aAVWj80vElTI2vGMHHOm0Lo4tDTJT2nZag5Y3b/nDtKEWOzdUTW+ki8buYcGcNE/P/IxFCz4n5WEhcvDAkZwwhUxBXMKOnD0ThhrF3Z2TA1jDrZ9kDDCUMWTIG5Ezh41TBq+eVo1JV1L8UJYzJeVioCQfYCoxq1aajlmMUu2WRS7MQHY+2jJsxKJCp9wqhH4hJzdwzLkRr/UqVyiA/GPTVj2fQsUm9dYSZ5fvDK2m3trZwilA/GPDfLss1J5K7iCqOW5XUDJpIKar4KwFw0vSwr+LeM1grvIhHxtrgs46yayzBMThhNq5sFWeNL/L2sqyg+N3OMJgxf6vskWQZxI7zba2nnHM49M27u/yUHTN0tIOtAZ+/YDXk3npzRrOkgNk/1S8g8aDULqg0jzcm4YSJhGHfOXhxcpMs8DQxpmWPU7uOoZS7vamDgPTPPYrad41kv2jMyotkh2zRudu1DL9Hs8aedpAkjmGeah9VYnqPxuRlTAUR7/gKxXQGUsmJAt9rM71SbBdk1e4Y91GbPVM1M369L1RzT4pwEl6r54xVVs1Uw55mww3nmRCzTKfJlxaO/4jzTqjRT8ZPmZySsz8xknsopnHlh1swdwFbAzy4w0fcdbZ2AXnEHYOVBEyYQvJ2JTz8cVNbUUOd7s5y/W1nB2Dy1w9PihTHPTDwTSBLEmM60vm80n/k8JWOmtjoI3DWnp34aT5yW0Qh72RzveGnofN1PF4C/P0NmjGlK7v5MX81N/jagmTOmmc6e65xZ350z0dU+kEhPM2FyzVN9QMsC2NOsH2FyjToyHpYjbrE89tJgaq6Mfw7AIq0xs/HvbRpK8rEHcg6geiZvTQEFZ2Ldfd4l5zQAOqFRPTRv0cShdnd2Jg/tEursTP3Usn1xFCX1fGnjSy5TWvukVFPe8C0k4XmzG7NzdhDuCHHo97xZVQ6fwtJWI2uYoWDhScDFjWFT249W2x+TgNtV6dvVVxfDsHSY0dyWbRp1ak/idOYZhuFlaTypM9Ik1AaaOO0wPeto3p3p2el0NBpNr1VPenb7qJBvqctcs0W2twZoG6ry6XDvf3Ybn6+O75N7w/MXE2VkiJD8X91g6niVxDcaFRej6BH9JZP2IBlvacwzX2d2z9SOU6MYJLn8XIyU92e0w7isYpd+GZvX402ZhVWEHvCVhutSJLym9flmk/VxSELDCFfJOieX3Clznc9Jzgt0zXfOXKq8gARfbYQrhIEqhIEqhIEq/K9aoOpt3QxhIAlhoAphoAqTJlS9rZshDCQhDFQhDFS9Lcyr19Jd72qZYX9XTB/6gnmn3wyk1u3uP6+6u6o86oD/JSEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVCEMVP0Dz7SN4TbTuHoAAAAASUVORK5CYII="
+                        alt="" class="w-10">
+                    Türkçe</a>
+            </div>
+        </div>
+
+
+        <nav class="lg:flex hidden text-[15px] nav items-center gap-x-12">
+            <a href="#" class="flex items-center gap-x-1 hover:text-gray-500 transition-all" id="aElement">
+                WordPress
+                <i class="fa-solid fa-arrow-down mt-1" id="iElement"></i>
+            </a>
+
+            <a href="#" class="hover:text-gray-500">
+                Site Kur Aracı
+
+            </a>
+
+            <a href="#" class="flex items-center gap-x-1 hover:text-gray-500 transition-all" id="aElement">
+
+                Hosting
+                <i class="fa-solid fa-arrow-down mt-1" id="iElement"></i>
+
+            </a>
+
+            <a href="#" class=" hover:text-gray-500">
+                Pro
+
+            </a>
+            <a href="#" class="hover:text-gray-500">
+                Domain
+
+            </a>
+
+            <a href="#" class="hover:text-gray-500 px-4 py-2 border rounded-md border-gray-500 font-bold">
+                <button>
+                    Giriş Yapın
+                </button>
+            </a>
+        </nav>
+
+        <div class="lg:hidden block text-3xl">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+
+   <div class="page-wrapper">
+    <section class="flex max-lg:flex-col py-24 px-4 justify-center items-center gap-y-12">
+        <!-- Left Side -->
+        <div class="flex flex-col max-md:justify-center items-center gap-y-0 container flex-1">
+            <h2 class="text-2xl font-semibold"><span class="text-purple-800">%​68</span> Oranında Web Hosting indirimi
+            </h2>
+
+            <h1 class="text-4xl font-bold mt-4">Web Hosting</h1>
+
+
+            <ul class="ul flex flex-col text-xl gap-y-4 my-12">
+                <li class="flex items-center gap-x-1">
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-check.svg#svgView(viewBox(0%200%2020%2020))"
+                        alt="">
+                    <span>7/24 Müşteri Desteği</span>
+                </li>
+
+                <li class="flex items-center gap-x-1">
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-check.svg#svgView(viewBox(0%200%2020%2020))"
+                        alt="">
+                    <span>Ücretsiz Domain</span>
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-help.svg#svgView(viewBox(0%200%2024%2024))"
+                        alt="">
+                </li>
+
+                <li class="flex items-center gap-x-1">
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-check.svg#svgView(viewBox(0%200%2020%2020))"
+                        alt="">
+                    <span>Ücretsiz Web Sitesi Taşıma</span>
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-help.svg#svgView(viewBox(0%200%2024%2024))"
+                        alt="">
+                </li>
+            </ul>
+
+
+            <span class="text-5xl text-[#2f1c6a] font-bold"><span class="text-xl">₺</span>
+                66,99
+                <span class="text-lg">/ay</span></span>
+            <span class="text-xl ml-4 font-semibold text-[#2f1c6a]">+ 3 Ay Ücretsiz</span>
+
+            <div class="flex gap-x-2 items-center pt-8 text-[#2f1c6a]">
+                <div class="py-3 px-3 border border-[#2f1c6a] rounded-md text-3xl">
+                    00
+                </div>
+                <span>:</span>
+
+                <div class="py-3 px-3 border border-[#2f1c6a] rounded-md text-3xl">
+                    14
+                </div>
+                <span>:</span>
+
+                <div class="py-3 px-3 border border-[#2f1c6a] rounded-md text-3xl">
+                    25
+                </div>
+                <span>:</span>
+
+                <div class="py-3 px-3 border border-[#2f1c6a] rounded-md text-3xl">
+                    16
+                </div>
+
+            </div>
+
+            <a href="#"
+                class="mt-4 px-6 py-2 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center">
+                <button class="">indirimi kaçırma</button>
+            </a>
+            <div class="mt-4">
+                <span class="hostinger flex items-center text-xltext-gray-600">
+                    <img src="https://www.hostinger.com.tr/h-assets/svg/icons/ui-icons/ic-shield.svg#svgView(viewBox(0%200%2020%2020))"
+                        alt="">
+                    gün para iade garantili</span>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col max-md:justify-center items-center gap-y-0 container flex-1">
+            <img src="images/download.png" class="" alt="">
+        </div>
+
+    </section>
+
+    <section class="px-4">
+        <div class="text-center leading-7 text-4xl max-lg:text-2xl whitespace-normal text-[#2f1c6a] tracking-wider font-bold">
+            En Yüksek Puanlı Web Hosting Hizmetleri
+        </div>
+
+        <div class="grid xl:grid-cols-4 lg:grid-cols-2 gap-y-12 py-12 gap-x-6 whitespace-nowrap">
+            <div class="text-3xl flex justify-center max-xl:mx-auto flex-col mx-auto gap-y-4 px-2">
+                <div>
+                    <i class="fa-solid fa-star text-[#00b67a]"></i>
+                    <span>Trustpilot</span>
+                </div>
+
+                <div class="">
+                    <i class="px-3 py-2 bg-[#00b67a] text-white fa-solid fa-star"></i>
+
+                    <i class="px-3 py-2 bg-[#00b67a] text-white fa-solid fa-star"></i>
+
+                    <i class="px-3 py-2 bg-[#00b67a] text-white fa-solid fa-star"></i>
+
+                    <i class="px-3 py-2 bg-[#00b67a] text-white fa-solid fa-star"></i>
+
+                    <i class="px-3 py-2 bg-[#00b67a] text-white fa-solid fa-star"></i>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="text-[16px] flex items-center gap-x-1">TrustScore <span
+                            class="span-star-section">4.6</span></span>
+                    <span class="text-[16px] flex gap-x-1"><span class="span-star-section">24,320</span>Reviews </span>
+                </div>
+            </div>
+
+            <div class="text-3xl flex justify-center max-xl:mx-auto flex-col mx-auto gap-y-4">
+                <div>
+                    <i class="fa-solid fa-star text-[#00b67a]"></i>
+                    <span>Google</span>
+                </div>
+
+                <div class="sss">
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="w-7 py-2 bg-[#00b67a] text-white rounded-md inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="flex px-4">
+                    <span class="text-[16px] flex items-center gap-x-1">Rating:
+
+                        <span class="span-star-section">4.8/5</span></span>
+                    &nbsp;
+                    <span class="text-lg">|</span>
+                    <span class="text-[16px] flex gap-x-1"><span class="span-star-section">
+                            1,237
+                        </span>incelemeler </span>
+                </div>
+            </div>
+
+            <div class="text-3xl flex justify-center max-xl:mx-auto flex-col mx-auto gap-y-4">
+                <div>
+                    <i class="fa-solid fa-star text-[#00b67a]"></i>
+                    <span>Google</span>
+                </div>
+
+                <div class="sss">
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="w-7 py-2 bg-[#00b67a] text-white rounded-md inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="flex px-4">
+                    <span class="text-[16px] flex items-center gap-x-1">Rating:
+
+                        <span class="span-star-section">4.8/5</span></span>
+                    &nbsp;
+                    <span class="text-lg">|</span>
+                    <span class="text-[16px] flex gap-x-1"><span class="span-star-section">
+                            1,237
+                        </span>incelemeler </span>
+                </div>
+            </div>
+
+            <div class="text-3xl flex justify-center max-xl:mx-auto flex-col mx-auto gap-y-4">
+                <div>
+                    <i class="fa-solid fa-star text-[#00b67a]"></i>
+                    <span>Google</span>
+                </div>
+
+                <div class="sss">
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bg-[#00b67a] text-white inline-block rounded-md">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="w-7 py-2 bg-[#00b67a] text-white rounded-md inline-block">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="flex px-4">
+                    <span class="text-[16px] flex items-center gap-x-1">Rating:
+
+                        <span class="span-star-section">4.8/5</span></span>
+                    &nbsp;
+                    <span class="text-lg">|</span>
+                    <span class="text-[16px] flex gap-x-1"><span class="span-star-section">
+                            1,237
+                        </span>incelemeler </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Card Menu -->
+    <section class="my-12 py-4">     
+        <div class="text-center leading-7 max-lg:leading-9 text-4xl max-lg:text-2xl whitespace-nowrap text-[#2f1c6a] tracking-wider font-bold">
+            Web Hosting Planınızı Seçin
+        </div>
+
+        <div class="grid lg:grid-cols-3 grid-cols-1 my-24 gap-y-24">
+            <div class="text-center flex flex-col gap-y-4 hover:scale-100 transition-all duration-500 mx-auto">
+                <span class="text-2xl font-semibold">Cloud Startup</span>
+
+                <p class="leading-6 text-lg text-gray-500 w-1/2 mx-auto">
+                    Optimize edilmiş performansın ve güçlü kaynakların avantajından faydalanın
+                </p>
+
+                <span class="text-purple-800 text-xl mt-6 font-bold"><del class="text-gray-500">₺
+                    549,99
+                     </del>
+                     %58 İndirim
+                </span>
+<span class="flex items-end mx-auto">
+                <span class="text-xl">
+                    ₺</span>
+                    <span class="text-5xl font-bold text-[#2f1c6a]">
+229,99
+</span>
+<span class="text-xl">/ay</span>
+                </span>
+
+                <span class="text-xl text-[#673de6] font-semibold">+2 ay ÜCRETSİZ</span>
+
+                <button class="mt-4 px-6 py-2 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center mx-auto">
+                    Sepete ekle
+                </button>
+
+                <span>
+                    ₺
+409,99
+/ay
+- Yenilendiğinde
+                </span>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        En İyi Özellikler
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Yönetimli WordPress Hosting
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Kodsuz Site Kur Aracı
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Güvenlik
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+
+                 
+                </ul>
+
+                <a href="#" class="px-2 max-lg:w-full py-2 bg-purple-700 hover:bg-purple-950 transition-colors duration-500 mt-12 rounded-md whitespace-nowrap text-white font-bold w-1/2 mx-auto">
+                    <button>Tüm özelliklere göz atın</button>
+                </a>
+
+
+
+            </div>
+
+            <div class="text-center flex flex-col gap-y-4 hover:scale-100 transition-all duration-500 mx-auto">
+                <span class="text-2xl font-semibold">Cloud Startup</span>
+
+                <p class="leading-6 text-lg text-gray-500 w-1/2 mx-auto">
+                    Optimize edilmiş performansın ve güçlü kaynakların avantajından faydalanın
+                </p>
+
+                <span class="text-purple-800 text-xl mt-6 font-bold"><del class="text-gray-500">₺
+                    549,99
+                     </del>
+                     %58 İndirim
+                </span>
+<span class="flex items-end mx-auto">
+                <span class="text-xl">
+                    ₺</span>
+                    <span class="text-5xl font-bold text-[#2f1c6a]">
+229,99
+</span>
+<span class="text-xl">/ay</span>
+                </span>
+
+                <span class="text-xl text-[#673de6] font-semibold">+2 ay ÜCRETSİZ</span>
+
+                <button class="mt-4 px-6 py-2 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center mx-auto">
+                    Sepete ekle
+                </button>
+
+                <span>
+                    ₺
+409,99
+/ay
+- Yenilendiğinde
+                </span>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        En İyi Özellikler
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Yönetimli WordPress Hosting
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Kodsuz Site Kur Aracı
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Güvenlik
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+
+                 
+                </ul>
+
+                <a href="#" class="px-2 max-lg:w-full py-2 bg-purple-700 hover:bg-purple-950 transition-colors duration-500 mt-12 rounded-md text-white font-bold w-1/2 mx-auto">
+                    <button>Tüm özelliklere göz atın</button>
+                </a>
+
+
+
+            </div>
+
+            <div class="text-center flex flex-col gap-y-4 hover:scale-100 transition-all duration-500 mx-auto">
+                <span class="text-2xl font-semibold">Cloud Startup</span>
+
+                <p class="leading-6 text-lg text-gray-500 w-1/2 mx-auto">
+                    Optimize edilmiş performansın ve güçlü kaynakların avantajından faydalanın
+                </p>
+
+                <span class="text-purple-800 text-xl mt-6 font-bold"><del class="text-gray-500">₺
+                    549,99
+                     </del>
+                     %58 İndirim
+                </span>
+<span class="flex items-end mx-auto">
+                <span class="text-xl">
+                    ₺</span>
+                    <span class="text-5xl font-bold text-[#2f1c6a]">
+229,99
+</span>
+<span class="text-xl">/ay</span>
+                </span>
+
+                <span class="text-xl text-[#673de6] font-semibold">+2 ay ÜCRETSİZ</span>
+
+                <button class="mt-4 px-6 py-2 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center mx-auto">
+                    Sepete ekle
+                </button>
+
+                <span>
+                    ₺
+409,99
+/ay
+- Yenilendiğinde
+                </span>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        En İyi Özellikler
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Yönetimli WordPress Hosting
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Kodsuz Site Kur Aracı
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">300</span> Web Sitesi</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border text-right border-gray-600 rounded-full"></i>
+                    </div>
+                    
+        
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">200 GB </span> NVMe Depolama</li>
+                  </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Günlük</span> Yedekleme (₺109,80)</li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    </div>
+
+                  <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">
+                        Sınırsız </span> Ücretsiz SSL </li> 
+                        <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                  </div>
+
+                <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Sınırsız </span> Trafik </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+                </ul>
+
+                <ul class="mt-12 flex flex-col gap-y-4 mx-auto">
+                    <h1 class="text-2xl font-bold">
+                        Güvenlik
+                    </h1>
+    
+                    <li class="text-[15px] w-full text-center  inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i> <span class="font-semibold">Maksimum (10 kata kadar)</span> Performans</li>
+
+                
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> E-posta</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                 <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span> Domain (₺260,99)</li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i>
+                    
+                 </div>
+
+                   <div class="flex justify-between">
+                    <li class="text-[15px] w-full text-center inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Ücretsiz </span>CDN </li>
+                    <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                   </div>
+
+                    <div class="flex justify-between">
+                        <li class="text-[15px] w-full text-left inline-flex space-between items-center gap-x-4"><i class="fa-solid fa-check text-left text-green-500"></i><span class="font-semibold">Özel
+                        </span> IP Adresi
+                       </li>
+                       <i class="fa-solid fa-question ml-12 px-1 py-1 border border-gray-600 rounded-full"></i> 
+                    </div>
+
+                 
+                </ul>
+
+                <a href="#" class="px-2 max-lg:w-full py-2 bg-purple-700 hover:bg-purple-950 transition-colors duration-500 mt-12 rounded-md text-white font-bold w-1/2 mx-auto">
+                    <button>Tüm özelliklere göz atın</button>
+                </a>
+
+
+
+            </div>
+
+           
+
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="text-center leading-7 text-xl text-[#2f1c6a] tracking-wider font-bold">
+            Ödeme şartları
+        </div>
+
+        <div class="page-wrapper">
+            <div class="mt-24 flex max-lg:flex-col">
+                <div class="w-1/3 mx-auto max-md:w-full">
+                    <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/client-stories/large/owen.png" alt="">
+                </div>
+    
+                <div class="w-3/4 max-lg:w-full flex flex-col gap-y-24 mx-auto -space-y-12 items-center justify-center">
+                    <h1 class="text-5xl max-lg:text-3xl max-lg:w-full] text-center">
+                        Hosting, alan adı ve SSL sertifikasını <span class="text-purple-700">tek bir yerden yönetebiliyorum</span>, bu gerçekten büyük kolaylık.
+                    </h1>
+
+                    <a href="#" class="text-purple-700 text-2xl font-semibold">Tam öyküyü oku</a>
+                    <div class="flex flex-col">
+                        <h1 class="text-3xl font-bold text-purple-950">Owen Phillips</h1>
+                        <span class="flex items-center gap-x-2"><span class="text-2xl text-purple-950 font-bold">Blacksmith</span> <span class="text-lg">|</span> <span class="text-lg">gatefootforge.co.uk</span></span>
+                    </div>    
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="mt-24 flex max-lg:flex-col items-center">
+               <div class="flex flex-col gap-y-12 flex-1">
+                <h1 class="text-center text-4xl font-bold text-purple-950">Başarınız İçin 7/24 Destek</h1>
+
+                <ul class="flex flex-col gap-y-12">
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span> Web sitenizle ilgili yardıma mı ihtiyacınız var? <span class="text-gray-800 font-bold">Canlı sohbet veya e-posta</span> ile uzmanlardan yardım alın.</span></li>
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span> Uzun beklemelere elveda! Tüm sorunları&nbsp;<span class="text-gray-800 font-bold">3 dakika&nbsp;</span>içinde çözüyoruz.</span></li>
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span> İletişim engeli de nedir! Temsilcilerimiz <span class="text-gray-800 font-bold"> 10'dan fazla </span> dilde akıcı olarak hizmet verir.</span></li>
+                </ul>
+               </div>
+
+               <div class="flex-1 mt-24">
+                <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/customer-support.png">
+               </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="flex max-lg:flex-col gap-y-24 gap-x-24 px-12">
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <h1 class="text-2xl font-semibold">
+                        <i class="fa-solid fa-star"></i>
+                    Trustpilot
+                    </h1>
+                    <p class="w-full max-lg:text-lg text-[15px] text-purple-900 leading-7">
+                        Kullanım kolaylığı söz konusu olduğunda en
+                         iyiler ve kesinlikle diğerlerine kıyasla en iyi canlı destek onlarda.
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-green-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <h1 class="text-2xl font-semibold">
+                        <i class="fa-solid fa-star"></i>
+                    Trustpilot
+                    </h1>
+                    <p class="w-full max-lg:text-lg text-[15px] text-purple-900 leading-7">
+                        Kullanım kolaylığı söz konusu olduğunda en
+                         iyiler ve kesinlikle diğerlerine kıyasla en iyi canlı destek onlarda.
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-green-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <h1 class="text-2xl font-semibold">
+                        <i class="fa-solid fa-star"></i>
+                    Trustpilot
+                    </h1>
+                    <p class="w-full max-lg:text-lg text-[15px] text-purple-900 leading-7">
+                        Kullanım kolaylığı söz konusu olduğunda en
+                         iyiler ve kesinlikle diğerlerine kıyasla en iyi canlı destek onlarda.
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-green-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                
+            </div>
+    
+        </div>
+    </section>
+    
+    <section class="my-12 py-24 bg-[#2f1c6a]">
+        <div class="page-wrapper">
+        <div class="flex max-lg:flex-col gap-x-32 items-center gap-y-12">
+          <div class="flex-1">
+            <img class="max-lg:w-[600px]" src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/ai-tools.png" alt="">
+          </div>
+
+          <div class="flex-1 max-lg:order-first flex flex-col gap-y-16">
+            <h1 class="text-5xl max-lg:text-4xl font-bold lg:w-[75%] w-full text-white">Web Sitesi Kurmak Yapay Zeka ile Daha Kolay</h1>
+             <ul class="flex flex-col gap-y-8 text-lg text-white mx-auto">
+                <li class="w-1/2 max-xl:w-full">
+                    <i class="fa-solid fa-check text-green-500"></i>
+                     AI destekli <span class="font-bold">Hostinger Blog Temamızla</span>kullanıma hazır bir web
+                      sitesine sahip olun.
+                    </li>
+
+                    <li class="w-1/2 max-xl:w-full">
+                        <i class="fa-solid fa-check text-green-500"></i>
+                        <span class="font-bold">YZ Asistan eklentisini </span>kullanarak benzersiz ve SEO dostu içerikler oluşturun.
+                        </li>
+
+
+                 <li class="w-1/2 max-xl:w-full">
+                    <i class="fa-solid fa-check text-green-500"></i>
+                    İçeriğiniz için <span class="font-bold">yapay zeka ilgili görselleri seçsin</span>, siz zamandan tasarruf edin!
+                    </li>
+             </ul>
+          </div>
+        </div>
+</div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="text-center leading-7 max-lg:leading-9 text-4xl max-lg:text-2xl text-[#2f1c6a] tracking-wider font-bold">
+            Yönetimli Hosting Gücünden Faydalanın
+        </div>
+
+        <div class="mt-16 mx-auto text-center flex justify-center">
+            <a href="#"
+            class="mt-4 px-8 py-3 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center">
+            <button class="">Hemen Başla</button>
+
+            
+        </a>
+        
+        </div>
+
+        <div class="text-center mt-6">
+
+            <li class="list-none ibline-flex items-center space-x-2 text-lg text-purple-950"><i class="fa-solid fa-check mr-2 text-green-500"></i>
+                
+30 gün para iade garantili
+            
+<i class="fa-solid fa-question py-0.5 px-0.5 border border-gray-500 rounded-full"></i>
+</li>
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="mt-24 flex max-lg:flex-col items-center">
+               <div class="flex flex-col gap-y-12 flex-1">
+                <h1 class="text-center text-4xl font-bold text-purple-950">Güvenlik En Büyük Önceliğimiz</h1>
+
+                <ul class="flex flex-col gap-y-12 justify-center">
+                      <li class="w-[70%] text-center gap-x-2 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span> <span class="text-gray-800 font-bold">Ücretsiz SSL sertifikaları</span>ile ziyaretçilerinizin hassas bilgilerini koruyun.</span></li>
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold">Kötü amaçlı yazılım tarayıcı</span> ile zararlı dosyaları önceden algılayıp kaldırın.</span></li>
+                      <li class="w-[70%] text-center gap-x-6 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold"> Gizlilik koruması </span> ile kişisel bilgilerinizi saklayın.</span></li>
+                      <li class="w-[70%] text-center gap-x-3 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span>Hostinger CDN ile<span class="text-gray-800 font-bold">  IP ve ülke engellemeyi  </span> kullanarak istenmeyen erişime karşı koyun.</span></li>
+                </ul>
+               </div>
+
+               <div class="flex-1 mt-24">
+                <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/security.png">
+               </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <section class="my-12 py-24 bg-[#2f1c6a]">
+        <div class="page-wrapper">
+        <div class="flex max-lg:flex-col gap-x-32 items-center gap-y-12">
+          <div class="flex-1">
+            <img class="max-lg:w-[600px]" src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/performance.png" alt="">
+          </div>
+
+          <div class="flex-1 max-lg:order-first flex flex-col gap-y-16">
+            <h1 class="text-5xl max-lg:text-4xl font-bold lg:w-[75%] w-full text-white">Eşsiz Web Site Performansı</h1>
+             <ul class="flex flex-col gap-y-8 text-lg text-white mx-auto">
+                <li class="w-1/2 max-xl:w-full">
+                    <i class="fa-solid fa-check text-green-500"></i>
+                     AI destekli <span class="font-bold">NVMe depolama</span>ile minimum gecikme ve maksimum hızı deneyimleyin.
+                    </li>
+
+                    <li class="w-1/2 max-xl:w-full">
+                        <i class="fa-solid fa-check text-green-500"></i>
+                        <span class="font-bold"><span>
+                            Şirket içi</span> CDN, ObjectCache ve LiteSpeed </span>Web Sunucusu teknolojimizle ışık hızında bir gezinme deneyimi sunun.
+                        </li>
+
+
+                 <li class="w-1/2 max-xl:w-full">
+                    <i class="fa-solid fa-check text-green-500"></i>
+                    İçeriğiniz için <span class="font-bold">Sınırsız bant genişliği</span> sayesinde yoğun trafiği bir profesyonel gibi yönetin.
+                    </li>
+             </ul>
+          </div>
+        </div>
+</div>
+    </section>
+
+    <section class="my-12 py-4">
+       <div class="page-wrapper">
+        <div class="flex max-lg:flex-col gap-y-24 gap-x-24 px-12">
+            <div class="flex flex-col gap-y-4 w-full mx-auto max-lg:text-center">
+                <h1 class="text-3xl font-extrabold text-black">
+                    
+                    techradar
+                </h1>
+                <p class="w-full text-lg text-purple-950 leading-7">
+                    Hostinger, birkaç nedenden dolayı bir numaralı seçimimiz.
+                    Hizmeti diğerleriyle karşılaştırırken,
+                     sitemiz Hostinger'da en iyi performansı gösterdi.
+                </p>
+
+                    
+            </div>
+
+            <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                <h1 class="text-3xl font-extrabold text-black">
+
+                    digital
+                </h1>
+                <p class="w-full text-lg text-purple-950 leading-7">
+                    Hostinger ile birden fazla test yaptığımızda ortalama yanıt süresi
+                    450 ms ile 625 ms arasındaydı ki bu çok iyi. Açıkça söylemek gerekirse, Hostinger kullanıyorsanız hız sorunu olmaz.
+                </p>
+            </div>
+
+
+            <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                <h1 class="text-3xl font-extrabold text-black">
+
+                
+cybernews
+
+                </h1>
+                <p class="w-full text-lg text-purple-950 leading-7">
+                    Küçük veya hiç BT personeli olmayan şirketler için uzman müşteri hizmetleri çok büyük bir avantaj. Özellikle uygun fiyatlı ve güvenilir bir paylaşımlı hosting hizmeti arıyorsanız, en iyi seçenektir.
+                </p>
+            </div>
+
+            
+        </div>
+       </div>
+
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="text-center leading-7 max-lg:leading-9 text-4xl max-lg:text-2xl whitespace-nowrap text-[#2f1c6a] tracking-wider font-bold">
+            Yüksek Hızlı Hosting Kullanın
+        </div>
+
+        <div class="mt-16 mx-auto text-center flex justify-center">
+            <a href="#"
+            class="mt-4 px-8 py-3 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center">
+            <button class="">Fiyatları Gör</button>
+
+            
+        </a>
+        
+        </div>
+
+        <div class="text-center mt-6">
+
+            <li class="list-none ibline-flex items-center space-x-2 text-lg text-purple-950"><i class="fa-solid fa-check mr-2 text-green-500"></i>
+                
+30 gün para iade garantili
+            
+<i class="fa-solid fa-question py-0.5 px-0.5 border border-gray-500 rounded-full"></i>
+</li>
+        </div>
+    </section>
+
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="mt-24 flex max-lg:flex-col items-center">
+               <div class="flex flex-col gap-y-12 flex-1">
+                <h1 class="text-center text-4xl font-bold text-purple-950">İşinizi Ölçeklendirin - Biz Arkanızdayız</h1>
+
+                <ul class="flex flex-col gap-y-12 justify-center">
+                      <li class="w-[70%] text-center gap-x-2 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span> Trafik dalgalanmalarına daima hazırsınız. <span class="text-gray-800 font-bold">Ücretsiz 24 saatlik plan yükseltme seçeneğiyle </span>daha yüksek performanslı bir planı deneyin.</span></li>
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold">Ölçeklenebilir web hosting planlarımızla</span>web sitenizin kaynaklarını artırın veya azaltın.</span></li>
+                      <li class="w-[70%] text-center gap-x-6 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold">.com ve .net dahil 20'den fazla ücretsiz alan adı </span>  ile çevrimiçi görünürlüğünüzü artırın.</span></li>
+                      <li class="w-[70%] text-center gap-x-3 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span>Hostinger CDN ile<span class="text-gray-800 font-bold">  Küresel veri merkezi ağıyla</span> yüksek çalışma süresi ve hızlı içerik yüklenmesinin keyfini çıkarın.</span></li>
+                </ul>
+               </div>
+
+               <div class="flex-1 mt-24">
+                <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/scale-business.png">
+               </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="mt-24 flex max-lg:flex-col items-center">
+                <div class="flex-1 mt-24">
+                    <img src=" https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/pages/web-hosting/migrate-to-hostinger.png">
+                   </div>
+
+               <div class="flex flex-col gap-y-12 flex-1">
+                <h1 class="text-center text-4xl font-bold text-purple-950">Zahmetsizce Hostinger'a Geçin</h1>
+
+                <ul class="flex flex-col gap-y-12 justify-center">
+                      <li class="w-[70%] text-center gap-x-2 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold">Otomatik Web Site Taşıma aracımızla </span>istediğiniz kadar web sitesini ücretsiz taşıyın.</span></li>
+                      <li class="w-[70%] text-center mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span>Arkanıza yaslanıp rahatlayın,<span class="text-gray-800 font-bold">özel taşıma ekibimiz</span>sorunsuz bir transfer sağlayacaktır.</span></li>
+                      <li class="w-[70%] text-center gap-x-6 mx-auto inline-flex"><i class="fa-solid fa-check text-green-500"></i><span><span class="text-gray-800 font-bold">Kesinti yok! </span>  ile çevrimiçi görünürlüğünüzü artırın.</span></li>
+                    
+                </ul>
+               </div>
+
+               
+            </div>
+        </div>
+        </div>
+    </section>
+
+   
+
+    <section class="my-12 py-4">
+        <div class="page-wrapper">
+            <div class="flex max-lg:flex-col gap-y-24 gap-x-24 px-12">
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/icons/g2-dark-2x.png" alt="">
+                    <p class="w-full text-lg max-lg:text-[15px] text-purple-900 leading-8">
+                        Hostinger'in en yararlı yanı, kurulum ve her şeyi çalışır duruma getirmenin kolaylığı. Hızlı geri dönüş, bu platformu diğerlerinden farklı kılan şey Hızlı olmaları :)
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-orange-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/icons/g2-dark-2x.png" alt="">
+                    <p class="w-full text-lg max-lg:text-[15px] text-purple-900 leading-8">
+                        Hostinger'in en yararlı yanı, kurulum ve her şeyi çalışır duruma getirmenin kolaylığı. Hızlı geri dönüş, bu platformu diğerlerinden farklı kılan şey Hızlı olmaları :)
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-orange-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="flex flex-col gap-y-4 max-lg:w-full mx-auto max-lg:text-center">
+                    <img src="https://www.hostinger.com.tr/_ipx/f_webp/h-assets/images/icons/g2-dark-2x.png" alt="">
+                    <p class="w-full text-lg max-lg:text-[15px] text-purple-900 leading-8">
+                        Hostinger'in en yararlı yanı, kurulum ve her şeyi çalışır duruma getirmenin kolaylığı. Hızlı geri dönüş, bu platformu diğerlerinden farklı kılan şey Hızlı olmaları :)
+                    </p>
+    
+                    <div class="flex justify-between w-[80%] max-lg:mx-auto max-lg:w-full whitespace-nowrap">
+                        <div class="text-xl text-orange-500">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+    
+                        <div>
+                            <i class="fa-solid fa-arrow-right cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                
+            </div>
+        </div>
+
+    </section>
+    
+
+    <section class="my-24 py-4">
+        <div class="text-center leading-7 max-lg:leading-9 text-4xl max-lg:text-2xl text-[#2f1c6a] tracking-wider font-bold">
+          2,002,312 Web Sitesi Sahibine Siz de Katılın
+        </div>
+
+        <div class="mt-16 mx-auto text-center flex justify-center">
+            <a href="#"
+            class="mt-4 px-8 py-3 w-64 bg-[#673de6] hover:bg-[#2f1c6a] transition-all duration-500 text-white text-center">
+            <button class="">Hemen Başla</button>
+
+            
+        </a>
+        
+        </div>
+
+        <div class="text-center mt-6">
+
+            <li class="list-none ibline-flex items-center space-x-2 text-lg text-purple-950"><i class="fa-solid fa-check mr-2 text-green-500"></i>
+                
+30 gün para iade garantili
+            
+<i class="fa-solid fa-question py-0.5 px-0.5 border border-gray-500 rounded-full"></i>
+</li>
+        </div>
+    </section>
+
+    <section class="my-12 py-4">
+        <div class="text-center leading-7 max-lg:leading-9 text-4xl max-lg:text-2xl text-[#2f1c6a] tracking-wider font-bold">
+            Web Hosting - Sıkça Sorulan Sorular
+        </div>
+
+        <div class="text-center mt-6">
+
+            <li class="list-none inline-flex items-center space-x-2 text-sm text-purple-950">
+                
+                Sıkça sorulan soruları ve yanıtları aşağıda bulabilirsiniz.
+        
+</li>
+        </div>
+    </section>
+
+    <section class="my-32 py-4">
+       
+        <div class="page-wrapper">
+            <ul class="flex justify-center  flex-col">
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+    
+                <div class="lg:px-32 px-0 w-full lg:text-2xl text-xl">
+                    <a href="#" class="flex justify-between items-center py-12"> 
+                        <li class="lg:text-2xl text-xl text-purple-900 font-bold">Web Hosting Nedir ve Neden Buna İhtiyacım Var?</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mt-32 mb-12 py-4">
+       <div class="page-wrapper">
+        <div class="grid grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-2 gap-x-24 px-16 gap-y-24">
+            <ul class="flex flex-col items-center gap-y-12 col-span-2 max-xl:col-span-4 max-lg:col-span-2">
+                <img src="https://www.hostinger.com.tr/h-assets/svg/icons/logos/hostinger-logo.svg#svgView(viewBox(0%200%20147%2030))" class="w-64" alt="">
+                <p class="w-full">
+                    İnternetteki herkesi başarıya ulaştırmayı hedefleyen bir web hosting firmasıyız.
+
+Sunucu teknolojimizi sürekli geliştiriyor, profesyonel destek sağlıyor ve YZ Site Kurucumuz ile site kurmayı basitleştiriyoruz.
+                </p>
+
+                <div class="flex gap-x-4 gap-y-4 flex-wrap" data-v-9951a77a="" data-v-a8fbd947=""><!--[--><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/visa.svg" alt="visa" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/mastercard.svg" alt="mastercard" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/amex.svg" alt="amex" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/discover.svg" alt="discover" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/jcb.svg" alt="jcb" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/maestro.svg" alt="maestro" loading="lazy" data-v-bed3ef45=""></div><div class="h-image h-payment-methods__icon" data-v-a8fbd947="" data-v-bed3ef45=""><img src="https://assets.hostinger.com/payment-options/dinersclub.svg" alt="dinersclub" loading="lazy" data-v-bed3ef45=""></div><!--]--><a class="h-payment-methods__more-btn" data-click-id="hgr-footer-payment_methods-more_button" href="/odeme" data-v-a8fbd947="">Ve fazlası</a></div>
+            </ul>
+
+            <ul class="flex flex-col gap-y-8 col-span-1 mx-auto max-lg:hidden">
+                <ul class="flex flex-col gap-y-4">
+                    <h1 class="text-2xl text-purple-950 font-bold">HOSTİNG</h1>
+                <a href="#">
+                    <li>Web Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li>VPS Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li>Minecraft Server Kiralama</li>
+                </a>
+
+                <a href="#">
+                    <li> CyberPanel Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li>Bulut Sunucu</li>
+                </a>
+
+                <a href="#">
+                    <li>WordPress Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li> Email Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li> Google Workspace</li>
+                </a>
+
+
+                <a href="#">
+                    <li> CMS Hosting</li>
+                </a>
+
+                <a href="#">
+                    <li>Ücretsiz Hosting</li>
+                </a>
+                </ul>
+
+               <ul class="flex flex-col gap-y-4">
+                <h1 class="text-2xl text-purple-950 font-bold">DOMAİN</h1>
+             
+
+                <a href="#">
+                    <li>Domain Sorgulama
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li>Domain Transfer</li>
+                </a>
+
+                <a href="#">
+                    <li>Ücretsiz Domain</li>
+                </a>
+
+                <a href="#">
+                    <li>XYZ Domaing</li>
+                </a>
+
+                <a href="#">
+                    <li>TLD</li>
+                </a>
+
+                <a href="#">
+                    <li>Whois Sorgulama</li>
+                </a>
+
+                <a href="#">
+                    <li>Ücretsiz SSL Sertifikası</li>
+                </a>
+               </ul>
+               
+            </ul>
+
+            <ul class="flex flex-col gap-y-8 col-span-1 mx-auto max-lg:hidden">
+                <ul class="flex flex-col gap-y-4">
+                    <h1 class="text-2xl text-purple-950 font-bold">ARAÇLAR</h1>
+                <a href="#">
+                    <li>Sanal Mağaza</li>
+                </a>
+
+                <a href="#">
+                    <li>Web Sitesi Kurucu</li>
+                </a>
+
+                <a href="#">
+                    <li>Logo Yapma Aracı</li>
+                </a>
+
+                <h1 class="text-2xl mt-4 text-purple-950 font-bold">BİLGİ</h1>
+
+                <a href="#">
+                    <li>Site Taşıma</li>
+                </a>
+
+                <a href="#">
+                    <li>Sistem Durumu</li>
+                </a>
+
+                <a href="#">
+                    <li> Ortaklık Programı</li>
+                </a>
+
+                <a href="#">
+                    <li> Ödeme Yöntemleri</li>
+                </a>
+
+
+                <a href="#">
+                    <li> Onur Tablosu</li>
+                </a>
+
+                <a href="#">
+                    <li>İncelemeler</li>
+                </a>
+
+                <a href="#">
+                    <li>Fiyatlar</li>
+                </a>
+
+                <a href="#">
+                    <li>Site Haritası</li>
+                </a>
+
+                <h1 class="text-2xl mt-4 text-purple-950 font-bold">YASAL</h1>
+
+                <a href="#">
+                    <li>Gizlilik Politikası</li>
+                </a>
+
+                <a href="#">
+                    <li>Hizmet Şartları</li>
+                </a>
+
+                <h1 class="text-2xl mt-4 text-purple-950 font-bold">ŞİRKET</h1>
+
+                <a href="#">
+                    <li>Hostinger Hakkında</li>
+                </a>
+
+                <a href="#">
+                    <li>Teknolojimiz</li>
+                </a>
+
+                <a href="#">
+                    <li>Yol Haritası (İngilizce)</li>
+                </a>
+
+                <a href="#">
+                    <li>İletişim</li>
+                </a>
+
+                <a href="#">
+                    <li>Blog (İng.)</li>
+                </a>
+                </ul>
+
+               <ul class="flex flex-col gap-y-4">
+                <h1 class="text-2xl text-purple-950 font-bold">DOMAİN</h1>
+
+                <a href="#">
+                    <li>Domain Sorgulama
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li>Domain Transfer</li>
+                </a>
+
+                <a href="#">
+                    <li>Ücretsiz Domain</li>
+                </a>
+
+                <a href="#">
+                    <li>XYZ Domaing</li>
+                </a>
+
+                <a href="#">
+                    <li>TLD</li>
+                </a>
+
+                <a href="#">
+                    <li>Whois Sorgulama</li>
+                </a>
+
+                <a href="#">
+                    <li>Ücretsiz SSL Sertifikası</li>
+                </a>
+               </ul>
+               
+            </ul>
+
+            <ul class="flex flex-col gap-y-8 col-span-1 mx-auto max-lg:hidden">
+                <ul class="flex flex-col gap-y-4">
+                    <h1 class="text-2xl text-purple-950 font-bold">YARDIM</h1>
+                <a href="#">
+                    <li>Rehberler</li>
+                </a>
+
+                <a href="#">
+                    <li>Bilgi tabanı (İng.)</li>
+                </a>
+
+                <a href="#">
+                    <li>Kötüye Kullanım Bildir</li>
+                </a>
+                </ul>
+               
+            </ul>
+
+            <ul class="col-span-2 gap-y-8 lg:hidden flex flex-col">
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">HOSTİNG</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">DOMAİN</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">ARAÇLAR</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">BİLGİ</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">YASAL</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">ŞİRKET</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+
+
+                <div class="text-2xl">
+                    <a href="#" class="flex justify-between"> 
+                        <li class="text-2xl text-purple-950 font-bold">YARDIM</li>
+        
+                        <i class="fa-solid fa-arrow-down text-2xl+" id="iElement"></i>
+                    </a>
+                </div>
+            </ul>
+
+
+        </div>
+
+        <div class="flex justify-end max-lg:justify-start mt-12 px-4 my-12">
+            <div class="inline-flex justify-end gap-x-4 text-3xl">
+                <i class="fa-brands fa-linkedin bg-purple-900 px-2 py-2 rounded-full text-white"></i>
+                <i class="fa-brands fa-facebook bg-purple-900 px-2 py-2 rounded-full text-white"></i>
+                <i class="fa-brands fa-instagram bg-purple-900 px-2 py-2 rounded-full text-white"></i>
+                <i class="fa-brands fa-twitter bg-purple-900 px-2 py-2 rounded-full text-white"></i>
+                <i class="fa-brands fa-youtube bg-purple-900 px-2 py-2 rounded-full text-white"></i>
+            </div>
+        </div>
+       </div>
+    </section>
+
+    <section class="mt-8 mb-4 py-4 px-6 flex justify-between text-purple-950 max-lg:flex-col gap-y-8">
+        <span>© 2004-2024 hostinger.com.tr - 
+            Premium Web Hosting, Bulut, VPS, AI Site Kurucu ve Domain Kayıt Hizmetleri.</span>
+
+            <span>Fiyatlara KDV dahil değildir</span>
+    </section>
+   </div>
+    
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
